@@ -1,18 +1,3 @@
 .App {
-  text-align: center;
-}
-
-.wrapper {
-  height: 100px;
-  margin: 15px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-items: left;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.hello-text {
-  font-size: 24px;
-  font-weight: 600;
+  margin: 10px 20px;
 }
