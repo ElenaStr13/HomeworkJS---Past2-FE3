@@ -1,0 +1,14 @@
+.page {
+    width: 1200px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 0 auto;
+    padding: 100px 20px;
+    justify-content: center;
+}
+
+body {
+    background-color: #909090;
+}

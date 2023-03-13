@@ -1,11 +1,21 @@
-import React from "react";
-import Hello from "./components/Hello.js";
+import Card from './components/card/Card';
+import './App.css';
+import cards from './components/product/product';
+
 function App() {
-  return (
-    <div style={{ backgroundColor: '#46B1DE' }} className="wrapper">
-      <Hello></Hello>
-      <button onClick={() => console.log('Click on button')}>Button</button>
+   
+    return <div className='page'>
+        {cards.map((item, index) => <Card key={index}
+            src={item.photo}
+            title={item.title}
+            text={item.text}
+            price={item.price}
+            hasSale={item.hasSale}
+            canBuy= {item.canBuy}
+            oldPrice= {item.oldPrice}
+        ></Card>)}    
+
     </div>
-    );
 }
 export default App;
+

@@ -1,0 +1,11 @@
+.heart {
+    fill: white;
+    opacity: 1;
+    background-color: white;
+    border-radius: 40px;
+}
+
+.clicked {
+    background-color: #FFD6D6;
+    fill: #FFD6D6;
+}
