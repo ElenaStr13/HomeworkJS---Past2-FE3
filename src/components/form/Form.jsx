@@ -103,24 +103,4 @@ class Form extends React.Component {
     }
 }
 
-// <form >
-//     <div className="name-form">Create an account</div>
-//     <div className="name-text">Let's get started with your 30 days free trial</div>
-//     <div className="inputs">
-//     <label htmlFor="name" className="inputAll">Name</label>
-//     <input type="text" id="name" />
-
-//     <label htmlFor="email" className="inputAll">Email</label>
-//     <input type="text" id="email" />
-
-//     <label htmlFor="password" className="inputAll">Password</label>
-//     <input type="text" id="password" />
-//     </div>                
-
-//     <Button color="black">Create Account</Button>
-//     <Button color="white">
-//         <img src="/Vector.png" alt="G"/>   Sign up with Google</Button>
-
-//     <div className="text-form">Already have an account?  <span> Sign in</span></div>
-// </form>
 export default Form;
