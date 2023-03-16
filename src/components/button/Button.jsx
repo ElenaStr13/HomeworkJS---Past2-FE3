@@ -1,10 +1,13 @@
 import "./index.css";
+import React from "react";
 
-function Button({children, color, isLink}) {
-    if (isLink) {
-        return <a href='#' className = {`${color} button`}>{children}</a>
+
+class Button extends React.Component {
+    render() {
+        return (           
+            <button className={`${this.props.color}`} type={`${this.props.submit}`}>{this.props.children}</button>            
+        )
     }
-    return <div className = {`${color} button`}>{children}</div>
 }
 
 export default Button;
