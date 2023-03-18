@@ -1,20 +1,32 @@
-import Card from './components/card/Card';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import cards from './components/product/product';
+import Card from './components/card/Card';
+import axios from 'axios';
+
 
 function App() {
-   
-    return <div className='page'>
-        {cards.map((item, index) => <Card key={index}
-            src={item.photo}
-            title={item.title}
-            text={item.text}
-            price={item.price}
-            hasSale={item.hasSale}
-            canBuy= {item.canBuy}
-            oldPrice= {item.oldPrice}
-        ></Card>)}    
+    const [menu, setMenu] = useState([]);
 
+    useEffect(() => {
+        axios.get(`/categories.json`).then((response) => {            
+            setMenu(response.data);
+            //console.log(response.data);            
+        }).catch((err) => {
+            console.log(err);
+        })
+    }, [])
+
+    return <div className='blog'>
+        <h1>Popular topics</h1>
+        <div className='menu'>
+            <span>All</span>
+            {menu.map((el, index) => {
+                return <div key={index}>{el.title}</div>
+            })}
+        </div>
+        <div className='cards'>
+        <Card />
+        </div>
     </div>
 }
 export default App;

@@ -1,14 +1,28 @@
-.page {
-    width: 1200px;
-    color: white;
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.blog {
+    margin-left: 100px;
+}
+h1 {
+    width: 700;
+    font-size: 36px;
+    line-height: 46.08px;
+    margin-left: 50px;
+}
+.menu {
     display: flex;
     flex-direction: row;
-    background-color: white;
-    margin: 0 auto;
-    padding: 100px 20px;
-    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    margin-left: 50px;
 }
-
-body {
-    background-color: #909090;
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1400px;
+    gap: 25px;
+    row-gap: 70px;    
 }

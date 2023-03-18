@@ -1,50 +1,71 @@
 .card {
-    width: 380px;
-    color: black;
-    position: relative;      
-}
-
-.title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-}
-
-.text {
-    font-size: 12px;
-    line-height: 15px;
-    margin-top: 12px;
-    margin-bottom: 8px;
-}
-
-.price {
-    font-size: 12px;
-    line-height: 15px;
-    margin-bottom: 25px;
-}
-
-.old-price {
-    font-size: 12px;
-    line-height: 15px;
-    text-decoration:line-through;
-    margin-bottom: 25px;
-    color: #BDBDBD;
-}
-
-.heart-sale {
-    position: absolute;
-    right: 10px;
-    top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    width: 310px;
+    gap: 15px;
+    height: 630px;
+    position: relative;
 }
 
-.allPrice {
+.card>img {
+    width: 310px;
+    height: max-content;
+    margin-bottom: 20px;
+}
+
+.category {
+    position: absolute;
+    left: 200px;
+    top: 5px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3px;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.date {
+    color: #6C757D;
+    width: 400;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 10px;
+}
+
+.title-card {
+    height: 75px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #495057;
+}
+
+.text-card {
+    height: 240px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #6C757D;
+}
+
+.author {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 17px;
 }
 
+.author>img {
+    border-radius: 50%;
+}
 
+.name-position {
+    display: flex;
+    flex-direction: column;
+}
 
+.name {
+    width: 700;
+}
+
+.position {
+    color: #6C757D;
+    width: 400;
+}

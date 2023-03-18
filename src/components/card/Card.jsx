@@ -1,23 +1,44 @@
-import "./index.css";
-import Button from "../button/Button";
-import HeartButton from "../heartButton/HeartButton";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './index.css';
 
-function Card({ src, title, text, price, oldPrice, hasSale, canBuy }) {
-    return <div className="card">
-        <img src={src} alt="photo" />
-        <div className="heart-sale">
-            {hasSale && <img src="/Sale.png" alt="Sale" className="sale" />}
-            <HeartButton className={'heart move'}></HeartButton>
-        </div>
-        <div className="title">{title}</div>
-        <div className="text">{text}</div>
-        <div className="allPrice">
-        <div className="price">$ {price}</div>
-        {hasSale && <div className="old-price">$ {oldPrice}</div>}
-        </div>
-        <Button color="black" isLink={true}>LEARN MORE</Button>
-        {canBuy && <Button color="white" isLink={true}>BUY NOW</Button>}
-    </div>
+
+
+function Card() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get(`/article.json`).then((response) => {
+            //console.log(response)
+            setData(response.data);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }, [])
+    console.log(new Date("2022-05-07 09:44:20").toLocaleDateString())
+
+    //let date = new Date(data.published_at);
+
+    //console.log(date);
+
+    return (<>
+        {data.map((el, index) => {
+            return <div key={index} className='card'>
+                <div className='category'>{el.category.title}</div>
+                <img src={el.image}></img>
+                <div className='date'>{new Date(`${el.published_at}`).toLocaleDateString()}</div>
+                <div className='title-card'>{el.title}</div>
+                <div className='text-card'>{el.description}</div>
+                <div className='author'>
+                    <img src={el.author.avatar} className='avatar' />
+                    <div className='name-position'>
+                        <div className='name'>{el.author.name}</div>
+                        <div className='position'>{el.author.position}</div>
+                    </div>
+
+                </div>
+            </div>
+        })}
+    </>)
 }
-
 export default Card;
