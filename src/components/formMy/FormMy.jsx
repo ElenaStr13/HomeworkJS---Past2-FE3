@@ -2,59 +2,6 @@ import "./index.css";
 import React from "react";
 import Button from "../button/Button";
 
-// class FormMy extends React.Component {
-//     constructor() {
-//         super();        
-//         this.state = {
-//             name:"",
-//             email:"",
-//             password:"",
-//             errorName:"",
-//             errorEmail:"",
-//             errorPassword:"",
-//         }       
-//     }
-//     valid() {
-//         for (const validation in valiations) {
-//             switch(validation) {
-//                 case 'isEmpty':
-//                     this.state.name? setEmpty(false) : setEmpty(true)
-//                       break  
-//             }
-//         }
-//         if (!this.state.name || this.state.name.length < 2) {
-//           this.setState({errorName: "Required"});
-//         }
-//     }  
-// submit() { 
-//     if (this.valid()) {
-//         alert("submit");
-//     }               
-// }    
-//      render() {
-//         return (
-//             <form className="inputs">           
-//                 <label htmlFor="name" className="inputAll">Name</label>
-//                 <input type="text" id="name"                  
-//                     onChange={(event)=>{this.setState({name:event.target.value})}} />
-//                     <div className="invalid">{this.state.errorName}</div>
-
-//                 <label htmlFor="email" className="inputAll">Email</label>
-//                 <input type="text" id="email"                  
-//                     onChange={(event)=>{this.setState({email:event.target.value})}} />
-//                <div className="invalid">{this.state.errorEmail}</div>
-
-//                 <label htmlFor="password" className="inputAll">Password</label>
-//                 <input type="password" id="password"                   
-//                     onChange={(event)=>{this.setState({password:event.target.value})}} />
-//                 <div className="invalid">{this.state.errorPassword}</div>
-
-//                 <button className="black" onClick={() => this.submit()}>Create Account</button>
-//             </form>
-//         )
-//     }
-// }
-
 class FormMy extends React.Component {
 
     constructor(props) {
