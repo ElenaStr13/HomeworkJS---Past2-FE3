@@ -1,0 +1,47 @@
+.form {
+    background-color: white;
+    padding-left: 100px;
+    width: 640px;
+}
+.name-form {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    margin-top: 200px;    
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 440px;
+    margin-top: 70px;    
+}
+input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 24px;
+}
+.inputAll {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.name-text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8D8D8D;
+}
+.text-form {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 150px;
+}
+.text-form>span {
+    color: #3EC1F3;    
+}
+.invalid {
+    color: rgb(209, 133, 133);
+}
