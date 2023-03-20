@@ -9,8 +9,7 @@ function App() {
 
     useEffect(() => {
         axios.get(`/categories.json`).then((response) => {            
-            setMenu(response.data);
-            //console.log(response.data);            
+            setMenu(response.data);                      
         }).catch((err) => {
             console.log(err);
         })

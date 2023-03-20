@@ -15,12 +15,7 @@ function Card() {
             console.log(err);
         })
     }, [])
-    console.log(new Date("2022-05-07 09:44:20").toLocaleDateString())
-
-    //let date = new Date(data.published_at);
-
-    //console.log(date);
-
+    
     return (<>
         {data.map((el, index) => {
             return <div key={index} className='card'>
