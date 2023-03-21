@@ -1,4 +1,5 @@
 [
+    { "id": 0, "title": "All" },
     { "id": 1, "title": "Adventure" },
     { "id": 2, "title": "Travel" },
     { "id": 3, "title": "Fashion" },

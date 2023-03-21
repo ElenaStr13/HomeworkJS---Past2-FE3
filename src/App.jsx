@@ -5,29 +5,28 @@ import axios from 'axios';
 
 
 function App() {
+
     const [menu, setMenu] = useState([]);
+    const [categoryId, setCategoryId] = useState([]);
 
     useEffect(() => {
-        axios.get(`/categories.json`).then((response) => {            
-            setMenu(response.data);
-            //console.log(response.data);            
+        axios.get(`/categories.json`).then((response) => {
+            setMenu(response.data);            
         }).catch((err) => {
             console.log(err);
         })
-    }, [])
+    }, []);
 
     return <div className='blog'>
         <h1>Popular topics</h1>
-        <div className='menu'>
-            <span>All</span>
+        <div className='menu' >
             {menu.map((el, index) => {
-                return <div key={index}>{el.title}</div>
+                return <div key={index} value={el.title} onClick={() => setCategoryId(el.id)}>{el.title}</div>
             })}
         </div>
         <div className='cards'>
-        <Card />
+            <Card categoryId={categoryId} />
         </div>
     </div>
 }
 export default App;
-

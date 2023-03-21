@@ -4,25 +4,29 @@ import './index.css';
 
 
 
-function Card() {
+function Card({ categoryId }) {
+
     const [data, setData] = useState([]);
+    const [currentData, setcurrentData] = useState([]);
 
     useEffect(() => {
         axios.get(`/article.json`).then((response) => {
-            //console.log(response)
             setData(response.data);
+            setcurrentData(response.data);
         }).catch((err) => {
             console.log(err);
         })
     }, [])
-    console.log(new Date("2022-05-07 09:44:20").toLocaleDateString())
 
-    //let date = new Date(data.published_at);
-
-    //console.log(date);
+    useEffect(() => {
+        setcurrentData(data.filter((el) => el.category_id == categoryId));
+        if (categoryId == 0) {
+            setcurrentData(data);
+        }        
+    }, [categoryId])
 
     return (<>
-        {data.map((el, index) => {
+        {currentData.map((el, index) => {
             return <div key={index} className='card'>
                 <div className='category'>{el.category.title}</div>
                 <img src={el.image}></img>
@@ -42,3 +46,4 @@ function Card() {
     </>)
 }
 export default Card;
+

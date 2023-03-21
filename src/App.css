@@ -17,6 +17,12 @@ h1 {
     margin-bottom: 40px;
     margin-left: 50px;
 }
+.menu div:hover {
+    color: #D4A373;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .cards {
     display: flex;
     flex-direction: row;
