@@ -1,0 +1,39 @@
+.task {
+    height: 60px;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    
+}
+.task:hover {
+    background-color: #F8FAFC;
+    scale: 1.001;
+}
+.checkbox {
+    margin-left: 20px;
+    margin-right: 20px;       
+}
+span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;    
+}
+.taskChbx {
+    display: flex;
+    align-items: center;
+    
+}
+.newTask {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+}
+.completed {
+    color: #969A9E;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
