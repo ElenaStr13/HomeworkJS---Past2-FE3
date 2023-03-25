@@ -11,7 +11,7 @@ function App() {
 
     useEffect(() => {
         axios.get(`/categories.json`).then((response) => {
-            setMenu(response.data);            
+            setMenu(response.data);
         }).catch((err) => {
             console.log(err);
         })
@@ -21,16 +21,14 @@ function App() {
         <h1>Popular topics</h1>
         <div className="menu" >
             {menu.map((el, index) => {
-                
-                return <div key={index} 
-                value={el.title}                
-                onClick={() => setCategoryId(el.id)}
-                className={categoryId === el.id? "active": ""}>
+                return <div key={index}
+                    value={el.title}
+                    onClick={() => setCategoryId(el.id)}
+                    className={categoryId === el.id ? "active" : ""}>
                     {el.title}
-                    </div>
-                
+                </div>
             })}
-       </div>
+        </div>
         <div className='cards'>
             <Card categoryId={categoryId} />
         </div>
