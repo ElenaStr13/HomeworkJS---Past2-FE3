@@ -1,0 +1,8 @@
+.invalid {
+    color: #ff6774;
+}
+
+form > div {
+    font-size: 14px;
+    color: #ff6774;
+  }
