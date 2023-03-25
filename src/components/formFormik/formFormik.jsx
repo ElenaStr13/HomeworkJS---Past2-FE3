@@ -5,30 +5,22 @@ import { Formik } from 'formik';
 
 
 class FormFormik extends React.Component {
-    //  changeClass = () => {
-    //     this.setState({ className: 'invalid' })
-    //  }
+
     render() {
         return (<>
             <Formik
                 initialValues={{ name: '', email: '', password: '' }}
                 validate={values => {
-                    //const [inputname, setInputName] = useState('');
-                    let inputName = document.getElementById("name");
-                    let inputEmail = document.getElementById("email");
-                    let inputPassword = document.getElementById("password");
 
                     const errors = {};
                     if (!values.name || values.name.length < 2) {
                         errors.name = 'Required';
                     } else if (/[0-9]/.test(values.name)) {
-                        inputName.classList.add('invalid');
                         errors.name = 'Invalid name, please, enter you name';
                     }
                     if (!values.email) {
                         errors.email = 'Required';
                     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-                        inputEmail.classList.add('invalid');
                         errors.email = 'Invalid email address';
                     }
                     if (!values.password) {
@@ -36,7 +28,6 @@ class FormFormik extends React.Component {
                     } else if (
                         !/[0-9A-Z]{8,}/i.test(values.password)
                     ) {
-                        inputPassword.classList.add('invalid');
                         errors.password = 'password is short, it must be more than 8 characters';
                     }
                     return errors;
@@ -56,27 +47,26 @@ class FormFormik extends React.Component {
                     isSubmitting,
                 }) => (
                     <form onSubmit={handleSubmit} className="inputs">
-                        <label htmlFor="name" className="inputAll">Name</label>
-                        <input type="name" name="name"
+                        <label htmlFor="name" >Name</label>
+                        <input type="name" className={`inputAll ${errors.name ? 'invalid' : ""}`}
+                            name="name"
                             id="name" onBlur={handleBlur}
                             value={values.name}
                             onChange={(event) => {
-                                //  this.changeClass(event)
                                 handleChange(event)
                             }}
                         />
                         {errors.name && touched.name && errors.name}
-                        <label htmlFor="email" className="inputAll">Email</label>
-                        <input type="email"
+                        <label htmlFor="email">Email</label>
+                        <input type="email" className={`inputAll ${errors.email ? 'invalid' : ""}`}
                             name="email"
                             id="email"
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.email} />
                         {errors.email && touched.email && errors.email}
-                        <label htmlFor="password" className="inputAll">Password</label>
-                        <input
-                            type="password"
+                        <label htmlFor="password" >Password</label>
+                        <input type="password" className={`inputAll ${errors.password ? 'invalid' : ""}`}
                             name="password"
                             id="password"
                             onChange={handleChange}

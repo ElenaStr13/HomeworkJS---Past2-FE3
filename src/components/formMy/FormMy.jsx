@@ -48,15 +48,12 @@ class FormMy extends React.Component {
         let input = this.state.input;
         let errors = {};
         let isValid = true;
-        let inputName = document.getElementById("name");
-        let inputEmail = document.getElementById("email");
-        let inputPassword = document.getElementById("password");
+     
 
         if (!input["name"] || input["name"].length < 2) {
             isValid = false;
             errors["name"] = 'Required';
-        } else if (/[0-9]/.test(input.name)) {
-            inputName.classList.add('invalid');
+        } else if (/[0-9]/.test(input.name)) {          
             isValid = false;
             errors["name"] = 'Invalid name, please, enter you name';
         }
@@ -64,8 +61,7 @@ class FormMy extends React.Component {
         if (!input["email"]) {
             isValid = false;
             errors.email = 'Required';
-        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.email)) {
-            inputEmail.classList.add('invalid');
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.email)) {           
             isValid = false;
             errors.email = 'Invalid email address';
         }
@@ -74,8 +70,7 @@ class FormMy extends React.Component {
             errors.password = 'Required';
         } else if (
             !/[0-9A-Z]{8,}/i.test(input.password)
-        ) {
-            inputPassword.classList.add('invalid');
+        ) {           
             isValid = false;
             errors.password = 'password is short, it must be more than 8 characters';
         }
@@ -91,8 +86,8 @@ class FormMy extends React.Component {
         return (
             <form className="inputs" onSubmit={this.handleSubmit}>
 
-                <label htmlFor="name" className="inputAll">Name</label>
-                <input type="text"
+                <label htmlFor="name">Name</label>
+                <input type="text" className={`inputAll ${this.state.errors.name? 'invalid': ""}`}                
                     name="name"
                     id="name"
                     value={this.state.input.name}
@@ -101,8 +96,8 @@ class FormMy extends React.Component {
                 />
                 <div>{this.state.errors.name}</div>
 
-                <label htmlFor="email" className="inputAll">Email</label>
-                <input type="text"
+                <label htmlFor="email">Email</label>
+                <input type="text" className={`inputAll ${this.state.errors.email? 'invalid': ""}`}
                     name="email"
                     id="email"
                     value={this.state.input.email}
@@ -110,8 +105,8 @@ class FormMy extends React.Component {
                     onBlur={this.handleBlur} />
                 <div>{this.state.errors.email}</div>
 
-                <label htmlFor="password" className="inputAll">Password</label>
-                <input type="text"
+                <label htmlFor="password">Password</label>
+                <input type="text" className={`inputAll ${this.state.errors.password? 'invalid': ""}`}
                     name="password"
                     id="password"
                     value={this.state.input.password}
