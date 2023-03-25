@@ -4,19 +4,20 @@ import Task from './components/task/Task';
 import Input from './components/input/Input';
 
 function App() {
-    const [task, setTask] = useState([]);
+    const [task, setTask] = useState([]);    
 
     const handleSubmit = (event) => {
         event.preventDefault();
         setTask((prevState) => {
             const data = [...prevState];
             data.unshift(event.target.inputTask.value);
-            return data
+            return data;            
         })
-        // event.target.inputTask.value = '';     
+        //event.target.inputTask.value = '';
     }
+      
 
-    const removeSubmit = (el, _key) => {
+    const removeSubmit = (el) => {
         //  console.log(el.key)         
         setTask((prevState) => {
             const data = [...prevState];
