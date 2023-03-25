@@ -22,7 +22,7 @@ function Card({ categoryId }) {
         setcurrentData(data.filter((el) => el.category_id == categoryId));
         if (categoryId == 0) {
             setcurrentData(data);
-        }        
+        }
     }, [categoryId])
 
     return (<>

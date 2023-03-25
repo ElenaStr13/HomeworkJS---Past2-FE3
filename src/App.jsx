@@ -19,11 +19,18 @@ function App() {
 
     return <div className='blog'>
         <h1>Popular topics</h1>
-        <div className='menu' >
+        <div className="menu" >
             {menu.map((el, index) => {
-                return <div key={index} value={el.title} onClick={() => setCategoryId(el.id)}>{el.title}</div>
+                
+                return <div key={index} 
+                value={el.title}                
+                onClick={() => setCategoryId(el.id)}
+                className={categoryId === el.id? "active": ""}>
+                    {el.title}
+                    </div>
+                
             })}
-        </div>
+       </div>
         <div className='cards'>
             <Card categoryId={categoryId} />
         </div>
