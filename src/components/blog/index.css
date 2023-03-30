@@ -1,19 +1,15 @@
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0 0;
 }
-
 .blog {
     margin-left: 100px;
 }
-
 h1 {
     width: 700;
     font-size: 36px;
     line-height: 46.08px;
     margin-left: 50px;
 }
-
 .menu {
     display: flex;
     flex-direction: row;
@@ -21,13 +17,11 @@ h1 {
     margin-bottom: 40px;
     margin-left: 50px;
 }
-
 .menu div:hover {
     color: #D4A373;
     transform: scale(1.1);
     cursor: pointer;
 }
-
 .active {
     color: #D4A373;
     transform: scale(1.1);
@@ -41,39 +35,5 @@ h1 {
     justify-content: center;
     width: 1400px;
     gap: 25px;
-    row-gap: 70px;
-}
-
-/* header */
-
-.header {
-    background-color: rgba(0, 0, 0, 0.2);
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    align-content: center;    
-    gap: 25px;  
-    padding-right: 100px;  
-}
-
-.nav {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    color: #E5E5E5;
-    text-decoration: none;    
-}
-.menu-active {
-    border-bottom: 2px solid #D4A373;
-    
-    color: white;
-}
-
-#content{
-    min-height:100%;
-    position: relative;
-    min-height: 100vh;
-    
+    row-gap: 70px;    
 }

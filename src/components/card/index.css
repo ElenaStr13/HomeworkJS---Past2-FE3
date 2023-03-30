@@ -33,17 +33,20 @@
 }
 
 .title-card {
-    height: 75px;
     font-size: 18px;
     line-height: 25px;
-    color: #495057;
+    color: #495057;    
 }
 
+a {
+    text-decoration: none;
+}
 .text-card {
     height: 240px;
     font-size: 12px;
     line-height: 20px;
     color: #6C757D;
+    margin-top: 10px;
 }
 
 .author {
