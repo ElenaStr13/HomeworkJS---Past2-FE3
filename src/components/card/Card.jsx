@@ -21,14 +21,15 @@ function Card({ categoryId }) {
             setData(response.data);
             setcurrentData(response.data);                       
         }).then(data  => {
-            if (!data) {
-                navigate ('/Blog');
+            if (!data.id) {
+                navigate ('/blog');
+               // navigate ('/*');
                 return
             }
         }).catch((err) => {
             console.log(err);
         })
-    }, [])
+    }, [data.id, navigate])
 
     useEffect(() => {
         setcurrentData(data.filter((el) => el.category_id == categoryId));
