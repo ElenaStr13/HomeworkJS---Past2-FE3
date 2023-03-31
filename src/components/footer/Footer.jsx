@@ -9,11 +9,17 @@ function Footer () {
             <li>mike@runo.com</li>
             <li>+944 450 904 505</li>
         </ul>
-        {/* <div className="about-footer">
+        <div className="about-footer">
         <span>191 Middleville Road,</span>
         <span>NY 1001, Sydney</span>
         <span>Australia</span>
-    </div> */}
+    </div>
+    <ul className="headquarter">
+            <li>Headquarter</li>
+            <li>191 Middleville Road,</li>
+            <li>NY 1001, Sydney</li>
+            <li>Australia</li>
+        </ul>
     </footer>
   }
 

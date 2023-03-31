@@ -11,23 +11,27 @@ import { useParams, useNavigate } from 'react-router-dom';
   
 
   useEffect(() => {
-    axios.get('/article.json').then(({ data }) => {    
+    axios.get('/article.json')
+    .then(({ data }) => {    
       setArticles(data)
-    // }).then(({ data })  => {
-    //     if (!data) {
-    //         navigate ('/Blog');
+    // }).then(data  => {
+    //     if (!data.id) {
+    //         navigate ('/blog');
+    //        //navigate ('/*');
     //         return
     //     }
-    })
+    //   })
+     })
+  
   }, [id, navigate])
   
-  return <div className='article' key={id}>
+  return <div className='article'>
 
     {articles.map((article) =>       
       (+article.id === +id) && <>
-      <div className='article-card'>{article.title}</div>
+      <div className='article-card' key={+article.id+article.title}>{article.title}</div>
       <div className="article__wrapper">
-        <span className='date'key={+article.id+article.title}><span> {new Date(article.published_at).toLocaleDateString()} </span>  -  <span>{article.reading_time} minutes</span></span>      
+        <span className='date'><span> {new Date(article.published_at).toLocaleDateString()} </span>  -  <span>{article.reading_time} minutes</span></span>      
         <div className='text-article'>{article.text }</div>      
         </div>
         <div>
