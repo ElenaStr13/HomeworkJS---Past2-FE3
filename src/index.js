@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import './scss/style.scss'
+import App from './App.js'
+import React from 'react'
+import * as ReactDOMClient from 'react-dom/client';
 
-// При натисканні на категорію статті мають фільтруватися відповідно до обраної категорії. 
-// За замовчуванням обрано “All” - відображаються усі статті. 
+import { Provider } from 'react-redux';
+import store from './store/index.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = ReactDOMClient.createRoot(container);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Provider store={store}> 
+        <App />
+    </Provider> 
 );
+
+
+
